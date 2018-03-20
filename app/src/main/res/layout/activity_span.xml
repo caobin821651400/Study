@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16sp">
+
+    <TextView
+        android:id="@+id/tv_about_anim_span"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layerType="software"
+        android:textColor="@color/black_deep"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_about_span"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:layerType="software"
+        android:textColor="@color/black_deep"
+        android:textSize="20sp" />
+
+</LinearLayout>

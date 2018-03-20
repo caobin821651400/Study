@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.androidremark.ui.layout.CoordinatorLayoutActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/green_deep_color"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/green_deep_color">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/photo4" />
+
+                <Button
+                    android:id="@+id/btn_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:text="点我" />
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStart="0.0dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <TextView
+                        android:id="@+id/tv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/btn_top_arrow_back_white"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="返回"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_title_msg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:text="收入情况"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
+
+            <TextView
+                android:id="@+id/tv_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="作品主题：
+                        \n\n
+《1988》在题旨上野心宏大，在结构上明晰、完整，安排了现实之旅与成长历程一明一暗两条线索，并加强了两条线索之间的相互参照、对比，从而强化了整个作品的思想涵盖力与讽喻性。
+ \n\n
+在《1988》中，韩寒想要表达、而更多的人避讳的一个主题，被他像打扑克般从容地顺手提溜出来，变幻着种种戏剧的效果：暴力执法、中小学教育、嫖客、严打、虚假广告、碰瓷捞钱、粗俗文艺、报纸审查、演艺圈潜规则、城管钓鱼、交通安全、地沟油……而这种从容正表现出了这些错误在“中国逻辑”下的正确。[6]
+ \n\n
+正如小说副题“我想和这个世界谈谈”所表现的，其中暗含了韩寒的态度：他需要以对话的方式，去解读这个世界，以及这个世界里人性之善恶、美丑、正邪。他想和这个世界谈谈，以一种“在路上”的方式，“试图用能给世界一些新意的眼光来看世界，试图寻找令人信服的价值”。[7]
+ \n\n
+在小说中，韩寒不仅在描绘人的现实遭遇，同时，他更是在探讨人的精神处境，这时就有了他自己的影子。他虽然没有直接参与进来，但是，他仍然在公人主陆子野身上渗透了自己的世界观。他怎样以一种清醒的方式看待世界，或者去反抗，或者去包容，这只是人生在困境时刻的态度。像陆子野对待娜娜，他一路上带着这个妓女，几次曾有摆脱她的想法，但善心召唤他最终没有行抛弃之举，而是以一种同情理解的姿态，容纳了这个萍水相逢但一路与他相互支撑、相互倾诉的朋友。娜娜最终选择离开陆子野，她没有把自己当做一种负累甩给他。这种感伤，让陆子野也定有心痛之感。
+ \n\n
+在追忆叙事里，不无伤感，但是，每个人都从中获得了一种坚韧，只有活下去，才能看到这个世界的希望，否则，一切都只不过是自欺欺人。精神的持守，才是韩寒最后需要定格的真相。生活本身就是残酷的，如果我们将这种残酷当做一种无法化解的苦难，悲观可能会接踵而至。韩寒在小说中，却一一化解了那些斗争、困惑、纠结与矛盾，虽然有些还是未能彻底处理，但是，他至少为我们出示了他追求自由的姿态，让我们看清了这个世界是需要如何来与之周旋，与之对话的。这或许才是其写作的价值和力量感所在。"
+                android:textColor="#666"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

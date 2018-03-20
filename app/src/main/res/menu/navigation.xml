@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_style"
+        android:icon="@drawable/d"
+        android:title="测试一" />
+
+    <item
+        android:id="@+id/navigation_practice"
+        android:icon="@drawable/d"
+        android:title="测试二" />
+    <item
+        android:id="@+id/navigation_using"
+        android:icon="@drawable/d"
+        android:title="测试三" />
+
+</menu>

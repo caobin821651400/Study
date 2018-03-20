@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/m_toolbar"/>
+
+    <Button
+        android:id="@+id/loading1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="show"
+        android:text="弹出对话框（默认水平显示）" />
+
+    <Button
+        android:id="@+id/loading2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="show"
+        android:text="弹出不可取消对话框（默认水平显示）" />
+
+    <Button
+        android:id="@+id/loading3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="show"
+        android:text="弹出自定义文字（垂直显示1）" />
+
+    <Button
+        android:id="@+id/loading4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="show"
+        android:text="弹出自定义文字（垂直显示2）" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="XLoadingDialog"
+        android:textSize="40sp" />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">笔记资料</string>
+    <string name="navigation_drawer_open">打开</string>
+    <string name="navigation_drawer_close">关闭</string>
+
+    <string name="title_activity_example">Alerter Demo</string>
+    <string name="default_alert">默认</string>
+    <string name="coloured_alert">自定义颜色</string>
+    <string name="text_only_alert">只有文字</string>
+    <string name="on_click_alert">带点击事件的</string>
+    <string name="verbose_alert">Verbose Alert</string>
+    <string name="custom_icon_alert">Custom Icon Alert</string>
+    <string name="callback_alert">Alert Callbacks</string>
+    <string name="infinite_alert">Infinity Duration Alert</string>
+    <string name="progress_alert">Progress Alert</string>
+    <string name="custom_font">Custom Font</string>
+    <string name="swipe_to_dismiss">Swipe To Dismiss Alert</string>
+    <string name="xloading_dialog_message">正在加载中</string>
+    <string name="xloading_no_network_text">无网络连接，请检查你的网络</string>
+    <string name="xloading_error_text">加载失败，请稍后再试</string>
+    <string name="xloading_empty_text">数据空空的哎~</string>
+    <string name="xloading_retry_text">点击重试</string>
+</resources>

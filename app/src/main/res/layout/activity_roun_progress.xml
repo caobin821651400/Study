@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.example.androidremark.view.RounProgressActivity">
+
+
+    <com.example.androidremark.view.RoundProgressBar
+        android:id="@+id/progress_bar_success"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:max="100"
+        app:progress="30"
+        app:ringColor="#F2E3C4"
+        app:ringProgressColor="#d950eb"
+        app:ringWidth="2.5dp"
+        app:textIsDisplayable="false"
+        app:textColor="#EBB350" />
+
+</LinearLayout>

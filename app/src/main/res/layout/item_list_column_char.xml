@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="55dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_column_name"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#5F5F5F"
+        android:textSize="11sp" />
+
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/tv_column_name"
+        android:layout_centerHorizontal="true"
+        android:background="#fedcdcdc" />
+
+    <com.example.androidremark.view.MyProgressBar
+        android:id="@+id/column_progress"
+        android:layout_width="30dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/bottom_line"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:indeterminate="false"
+        android:indeterminateOnly="false"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_vertical" />
+
+    <TextView
+        android:id="@+id/tv_top_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/column_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="3dp"
+        android:background="#21C392"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="12"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+</RelativeLayout>

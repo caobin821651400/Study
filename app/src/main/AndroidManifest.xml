@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.androidremark">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--<uses-permission android:name="android.permission.WRITE_CONTACTS" />-->
+    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.chart.cake.ChartActivity" />
+        <activity android:name=".ui.payment.ALiPayActivity" />
+        <activity android:name=".ui.flow.FlowLayoutActivity" />
+        <activity android:name=".ui.contacts.ContactsActivity" />
+        <activity android:name=".ui.popup.PopupTestActivity" />
+        <activity android:name=".ui.qq.SwipeMenuActivity" />
+        <activity android:name=".ui.camera.CameraActivity" />
+        <activity android:name=".ui.imageview.ScratchActivity" />
+        <activity android:name=".ui.textview.StrikeTextViewActivity" />
+        <activity android:name=".ui.layout.CoordinatorLayoutActivity" />
+        <activity android:name=".statusbarutil.StatusBarActivity" />
+        <activity android:name=".statusbarutil.UseInFragmentActivity" />
+        <activity android:name=".statusbarutil.ColorStatusBarActivity" />
+        <activity android:name=".statusbarutil.ImageStatusBarActivity" />
+        <activity android:name=".statusbarutil.ImageViewActivity" />
+        <activity android:name=".statusbarutil.SwipeBackActivity" />
+        <activity android:name=".ui.alerter.ExampleActivity" />
+        <activity android:name=".ui.layout.WangYiActivity" />
+        <activity android:name=".network.SocketTestActivity" />
+        <activity android:name=".view.RounProgressActivity" />
+        <activity android:name=".banner.Banner1Activity" />
+        <activity android:name=".ui.recycler.RecyclerViewActivity" />
+        <activity android:name=".ui.recycler.sticky.StickyRecyclerActivity" />
+        <activity android:name=".permission.PermissionActivity" />
+        <activity android:name=".ui.interfaceloading.TipActivity" />
+        <activity android:name=".ui2.xloadingdialog.XLoadingDialogActivity" />
+        <activity android:name=".ui2.baserecycler.BaseRecyclerActivity" />
+        <activity android:name=".ui2.grouprecycler.GroupRecyclerActivity" />
+        <activity android:name=".ui2.button.SwitchButtonActivity" />
+        <activity android:name=".ui.textview.span.SpanActivity" />
+        <activity android:name=".ui2.calendar.CalendarActivity" />
+        <activity android:name=".animation.ObjectAnimActivity" />
+        <activity android:name=".ui.flow.myflow.MyFlowActivity" />
+        <activity android:name=".ui2.meituan.MTOutFoodActivity" />
+        <activity android:name=".ui2.tree_recycler.TreeRecyviewActivity" />
+        <activity android:name=".ui2.sinmath.SinActivity" />
+        <activity android:name=".ui2.line.LineChartActivity" />
+        <activity android:name=".ui3.column.ColumnCharActivity" />
+        <activity android:name=".ui3.stickscroll.StickScrollViewActivity" />
+        <activity android:name=".ui3.group.BaseGroupRecyclerActivity" />
+        <activity android:name=".ui3.eventBus.EventbusActivity" />
+        <activity android:name=".ui3.WangYiGdActivity" />
+        <activity android:name=".ui3.contacts.XContactsActivity"></activity>
+    </application>
+
+</manifest>

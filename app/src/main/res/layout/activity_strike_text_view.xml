@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.androidremark.ui.textview.StrikeTextViewActivity">
+
+    <com.example.androidremark.widget.StrikeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="abc"
+        android:textSize="70sp"
+        app:strike_left_padding="5dp"
+        app:strike_line_color="@color/colorAccent"
+        app:strike_line_width="4.5dp"
+        app:strike_right_padding="5dp"
+        app:strike_type="oblique_strike" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="#4b4b4b" />
+
+    <com.example.androidremark.ui.textview.verticalroll.AdverItemView
+        android:id="@+id/jd_adverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/main_color"
+        app:adtextColor="#ffffff"
+        app:adtextSize="30sp"
+        app:adverHeight="40dp"
+        app:animDuration="1000"
+        app:gap="3000" />
+
+</LinearLayout>

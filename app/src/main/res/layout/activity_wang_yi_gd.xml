@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.androidremark.ui3.WangYiGdActivity">
+
+    <ImageView
+        android:id="@+id/parallax"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/photo1"
+        app:layout_collapseMode="parallax" />
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<android.support.design.widget.CollapsingToolbarLayout-->
+                <!--android:id="@+id/collapse"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:contentScrim="?attr/colorPrimary"-->
+                <!--app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"-->
+                <!--app:titleEnabled="false">-->
+
+                <RelativeLayout
+                    android:id="@+id/panel_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="200dp"
+                    android:orientation="vertical">
+
+                    <com.example.androidremark.view.CircleImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/avatar2"
+                        app:civ_border_color="@android:color/white"
+                        app:civ_border_overlay="true"
+                        app:civ_border_width="3dp" />
+
+                    <TextView
+                        android:id="@+id/visitor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:shadowColor="#aa000000"
+                        android:shadowDx="2.5"
+                        android:shadowDy="2.5"
+                        android:shadowRadius="10"
+                        android:text="访客总量 15"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+
+            <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/blue_78d2f6" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/red_wine" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/camera_progress_overflow" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/blue_01aaee" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/blue_00aaee" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="0dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_collapseMode="pin"
+        app:navigationIcon="?attr/homeAsUpIndicator">
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:id="@+id/buttonBarLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/toolbar_avatar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/avatar2" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="一醉方休"
+                android:textSize="16sp" />
+        </android.support.v7.widget.ButtonBarLayout>
+    </android.support.v7.widget.Toolbar>
+</FrameLayout>

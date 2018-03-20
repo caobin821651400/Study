@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorCircleView">
+        <attr name="circle_color" format="color" />
+        <attr name="stroke_width" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayout">
+        <!-- format="reference"意为参考某一资源ID -->
+        <attr name="content_id" format="reference" />
+        <attr name="right_id" format="reference" />
+    </declare-styleable>
+    <!--划线的textview-->
+    <declare-styleable name="StrikeTextView">
+        <attr name="strike_line_width" format="dimension" />
+        <attr name="strike_line_color" format="color" />
+        <attr name="strike_left_padding" format="dimension" />
+        <attr name="strike_right_padding" format="dimension" />
+        <attr name="strike_type" format="enum">
+            <enum name="under_strike" value="0" />
+            <enum name="middle_strike" value="1" />
+            <enum name="oblique_strike" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <!--Alerter-->
+    <declare-styleable name="Alerter">
+        <attr name="alertStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Alert">
+        <attr name="alertIcon" format="reference" />
+        <attr name="alertBackgroundColor" format="color" />
+        <attr name="alertTitle" format="string" />
+        <attr name="alertText" format="string" />
+    </declare-styleable>
+
+    <!--带进度的圆形进度条-->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="max" format="integer" />
+        <attr name="progress" format="integer"></attr>
+        <attr name="startAngle" format="integer"></attr>
+        <attr name="ringColor" format="color" />
+        <attr name="ringProgressColor" format="color" />
+        <attr name="ringWidth" format="dimension"></attr>
+        <attr name="centreColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
+        </attr>
+    </declare-styleable>
+    <!--界面lodding-->
+    <declare-styleable name="XLoadingView">
+        <attr name="loadingView" format="reference" />
+        <attr name="errorView" format="reference" />
+        <attr name="emptyView" format="reference" />
+        <attr name="noNetworkView" format="reference" />
+    </declare-styleable>
+    <!--垂直轮播文字-->
+    <declare-styleable name="AdverItemView">
+        <attr name="gap" format="integer" />
+        <attr name="animDuration" format="integer" />\
+        <attr name="adtextSize" format="dimension|reference" />
+        <attr name="adtextColor" format="color" />
+        <attr name="adverHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="XCalendarView">
+        <attr name="curMonth" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="Banner"><attr format="integer" name="delay_time"/><attr format="integer" name="scroll_time"/><attr format="boolean" name="is_auto_play"/><attr format="color|reference" name="title_background"/><attr format="color" name="title_textcolor"/><attr format="dimension" name="title_textsize"/><attr format="dimension" name="title_height"/><attr format="dimension" name="indicator_width"/><attr format="dimension" name="indicator_height"/><attr format="dimension" name="indicator_margin"/><attr format="reference" name="indicator_drawable_selected"/><attr format="reference" name="indicator_drawable_unselected"/><attr format="reference" name="banner_layout"/><attr format="reference" name="banner_default_image"/><attr format="enum" name="image_scale_type">
+        <enum name="center" value="0"/>
+        <enum name="center_crop" value="1"/>
+        <enum name="center_inside" value="2"/>
+        <enum name="fit_center" value="3"/>
+        <enum name="fit_end" value="4"/>
+        <enum name="fit_start" value="5"/>
+        <enum name="fit_xy" value="6"/>
+        <enum name="matrix" value="7"/>
+    </attr></declare-styleable>
+    <item name="bannerContainer" type="id"/>
+    <item name="bannerDefaultImage" type="id"/>
+    <item name="bannerTitle" type="id"/>
+    <item name="bannerViewPager" type="id"/>
+    <item name="circleIndicator" type="id"/>
+    <item name="indicatorInside" type="id"/>
+    <item name="numIndicator" type="id"/>
+    <item name="numIndicatorInside" type="id"/>
+    <item name="titleView" type="id"/>
+
+    <!--<declare-styleable name="HorizontalProgressView">-->
+        <!--<attr name="progressNormalColor"/>-->
+        <!--<attr name="progressReachColor"/>-->
+        <!--<attr name="progressTextColor"/>-->
+        <!--<attr name="progressTextSize"/>-->
+        <!--<attr name="progressTextOffset"/>-->
+        <!--<attr name="progressNormalSize"/>-->
+        <!--<attr name="progressReachSize"/>-->
+        <!--<attr format="enum" name="progressTextPosition">-->
+            <!--<enum name="TOP" value="1"/>-->
+            <!--<enum name="BOTTOM" value="-1"/>-->
+            <!--<enum name="CENTER" value="0"/>-->
+        <!--</attr>-->
+        <!--<attr name="progressTextVisible"/>-->
+        <!--<attr name="progressTextSkewX"/>-->
+        <!--<attr name="progressTextPrefix"/>-->
+        <!--<attr name="progressTextSuffix"/>-->
+    <!--</declare-styleable>-->
+
+    <!--可以描边的imageView-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_border_width" format="dimension" />
+    </declare-styleable>
+</resources>
