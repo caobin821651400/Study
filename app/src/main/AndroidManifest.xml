@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.chart.cake.ChartActivity" />
+        <activity android:name=".ui.chart.cake.ChartActivity"/>
         <activity android:name=".ui.payment.ALiPayActivity" />
         <activity android:name=".ui.flow.FlowLayoutActivity" />
         <activity android:name=".ui.contacts.ContactsActivity" />
