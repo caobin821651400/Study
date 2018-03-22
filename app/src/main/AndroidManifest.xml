@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".network.SocketTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +42,7 @@
         <activity android:name=".statusbarutil.SwipeBackActivity" />
         <activity android:name=".ui.alerter.ExampleActivity" />
         <activity android:name=".ui.layout.WangYiActivity" />
-        <activity android:name=".network.SocketTestActivity" />
+        <!--<activity android:name=".network.SocketTestActivity" />-->
         <activity android:name=".view.RounProgressActivity" />
         <activity android:name=".banner.Banner1Activity" />
         <activity android:name=".ui.recycler.RecyclerViewActivity" />
@@ -60,7 +60,6 @@
         <activity android:name=".ui2.meituan.MTOutFoodActivity" />
         <activity android:name=".ui2.tree_recycler.TreeRecyviewActivity" />
         <activity android:name=".ui2.sinmath.SinActivity" />
-        <activity android:name=".ui2.line.LineChartActivity" />
         <activity android:name=".ui3.column.ColumnCharActivity" />
         <activity android:name=".ui3.stickscroll.StickScrollViewActivity" />
         <activity android:name=".ui3.group.BaseGroupRecyclerActivity" />
