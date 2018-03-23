@@ -18,7 +18,9 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.ref.WeakReference;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketAddress;
 
 import static com.example.androidremark.R.id.btn_receiver;
 import static com.example.androidremark.R.id.btn_send;
@@ -82,8 +84,9 @@ public class SocketTestActivity extends BaseActivity {
             try {
                 while (!mServerIsConnection) {
                     System.err.println("重新连接。。。");
-                    mSocket = new Socket(IP, 8080);
-                    mSocket.setSoTimeout(8000);
+                    mSocket = new Socket();
+                    SocketAddress socketAddress = new InetSocketAddress(IP, 8080);
+                    mSocket.connect(socketAddress, 8000);
                     bufferedWriter = new BufferedWriter(new OutputStreamWriter(mSocket.getOutputStream(), "UTF-8"));
                     bufferedReader = new BufferedReader(new InputStreamReader(mSocket.getInputStream(), "UTF-8"));
 
@@ -96,6 +99,14 @@ public class SocketTestActivity extends BaseActivity {
 
                     String receiveMsg;
                     while ((receiveMsg = bufferedReader.readLine()) != null) {
+                        if (receiveMsg.equals("111")) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    toast("弹窗");
+                                }
+                            });
+                        }
                         System.err.println("客户端接收的消息-->" + receiveMsg);
                     }
                 }
