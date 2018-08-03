@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!--<uses-permission android:name="android.permission.WRITE_CONTACTS" />-->
-    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
+    <!-- <uses-permission android:name="android.permission.WRITE_CONTACTS" /> -->
+    <!-- <uses-permission android:name="android.permission.GET_ACCOUNTS" /> -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,14 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".network.SocketTestActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.chart.cake.ChartActivity"/>
+        <activity android:name=".ui.chart.cake.ChartActivity" />
         <activity android:name=".ui.payment.ALiPayActivity" />
         <activity android:name=".ui.flow.FlowLayoutActivity" />
         <activity android:name=".ui.contacts.ContactsActivity" />
@@ -42,7 +42,7 @@
         <activity android:name=".statusbarutil.SwipeBackActivity" />
         <activity android:name=".ui.alerter.ExampleActivity" />
         <activity android:name=".ui.layout.WangYiActivity" />
-        <!--<activity android:name=".network.SocketTestActivity" />-->
+        <activity android:name=".network.SocketTestActivity" />
         <activity android:name=".view.RounProgressActivity" />
         <activity android:name=".banner.Banner1Activity" />
         <activity android:name=".ui.recycler.RecyclerViewActivity" />
@@ -65,7 +65,8 @@
         <activity android:name=".ui3.group.BaseGroupRecyclerActivity" />
         <activity android:name=".ui3.eventBus.EventbusActivity" />
         <activity android:name=".ui3.WangYiGdActivity" />
-        <activity android:name=".ui3.contacts.XContactsActivity"></activity>
+        <activity android:name=".ui3.contacts.XContactsActivity" />
+        <activity android:name=".ui3.viewpager.ViewPagerActivity"></activity>
     </application>
 
 </manifest>

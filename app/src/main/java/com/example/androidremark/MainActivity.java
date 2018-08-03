@@ -62,19 +62,17 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EventBus.getDefault().register(this);
         initView();
+
+        EventBusBean bean = new EventBusBean("你好");
+        EventBus.getDefault().postSticky(bean);
     }
 
-    @Subscribe(threadMode=ThreadMode.MAIN)
-    public void onMessageEvent(EventBusBean event) {
-        /* Do something */
-        ((TextView) findViewById(R.id.text)).setText(event.getName());
-    }
+
 
     @Override
     protected void onDestroy() {
-        EventBus.getDefault().unregister(this);
+      //  EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 
@@ -102,7 +100,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
         String[][] array = {
                 {"自定义View", "饼形图", "支付完成", "橡皮擦", "日历"},
                 {"自定义", "圆进度条", "流式布局", "自定义流式布局", ""},
-                {"轮播", "Banner", "", "XLoadingDialog", ""},
+                {"轮播", "Banner", "viewPager", "XLoadingDialog", ""},
                 {"网络", "socket", "分组recycler", "美团外卖", "RxJava"},
                 {"按钮", "switch", "通讯录", "", ""},
                 {"弹窗", "PopupWindow", "alerter", "", ""},
@@ -171,6 +169,8 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         launchActivity(Banner1Activity.class, null);
                         break;
                     case R.id.tv_view_two:
+                        //viewPager
+
                         break;
                     case R.id.tv_view_three:
                         //XLoadingDialog
