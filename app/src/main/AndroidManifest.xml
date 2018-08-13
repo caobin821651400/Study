@@ -66,7 +66,8 @@
         <activity android:name=".ui3.eventBus.EventbusActivity" />
         <activity android:name=".ui3.WangYiGdActivity" />
         <activity android:name=".ui3.contacts.XContactsActivity" />
-        <activity android:name=".ui3.viewpager.ViewPagerActivity"></activity>
+        <activity android:name=".ui3.viewpager.ViewPagerActivity"/>
+        <activity android:name=".ui3.light.ColorLightActivity"/>
     </application>
 
 </manifest>

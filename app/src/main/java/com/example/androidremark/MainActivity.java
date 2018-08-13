@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
 
 import com.example.androidremark.animation.ObjectAnimActivity;
 import com.example.androidremark.banner.Banner1Activity;
@@ -44,11 +43,10 @@ import com.example.androidremark.ui3.contacts.XContactsActivity;
 import com.example.androidremark.ui3.eventBus.EventBusBean;
 import com.example.androidremark.ui3.eventBus.EventbusActivity;
 import com.example.androidremark.ui3.group.BaseGroupRecyclerActivity;
+import com.example.androidremark.ui3.light.ColorLightActivity;
 import com.example.androidremark.view.RounProgressActivity;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,10 +67,9 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
     }
 
 
-
     @Override
     protected void onDestroy() {
-      //  EventBus.getDefault().unregister(this);
+        //  EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 
@@ -99,7 +96,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
         List<MainMenuNameBean> list = new ArrayList<>();
         String[][] array = {
                 {"自定义View", "饼形图", "支付完成", "橡皮擦", "日历"},
-                {"自定义", "圆进度条", "流式布局", "自定义流式布局", ""},
+                {"自定义", "圆进度条", "流式布局", "自定义流式布局", "七彩灯"},
                 {"轮播", "Banner", "viewPager", "XLoadingDialog", ""},
                 {"网络", "socket", "分组recycler", "美团外卖", "RxJava"},
                 {"按钮", "switch", "通讯录", "", ""},
@@ -159,6 +156,8 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         launchActivity(MyFlowActivity.class, null);
                         break;
                     case R.id.tv_view_four:
+                        //七彩灯
+                        launchActivity(ColorLightActivity.class, null);
                         break;
                 }
                 break;
