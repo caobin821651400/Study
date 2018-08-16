@@ -41,12 +41,13 @@ public class SocketTestActivity extends BaseActivity {
     BufferedWriter bufferedWriter;
     BufferedReader bufferedReader;
     private boolean mServerIsConnection = false;//服务器是否在连接状态
+    private boolean isRun = true;
     private long sleepTime = 6 * 1000;//线程休眠时间
     private long cycTime = 6 * 1000;//定时向服务器发送心跳包
     private long lastSendTime = 0;//每发送完成记录当前时间
 
 
-    private static final String IP = "10.206.14.210";
+    private static final String IP = "10.206.14.189";
     private MyHandler mHandler;
 
     @Override
@@ -82,7 +83,7 @@ public class SocketTestActivity extends BaseActivity {
         @Override
         public void run() {
             try {
-                while (!mServerIsConnection) {
+                while (!mServerIsConnection && isRun) {
                     System.err.println("重新连接。。。");
                     mSocket = new Socket();
                     SocketAddress socketAddress = new InetSocketAddress(IP, 8080);
@@ -133,7 +134,7 @@ public class SocketTestActivity extends BaseActivity {
     private class HeartBeatThread extends Thread {
         @Override
         public void run() {
-            while (mServerIsConnection) {
+            while (mServerIsConnection && isRun) {
                 try {
                     DataOutputStream outputStream = new DataOutputStream(mSocket.getOutputStream());
                     outputStream.write("0xxfffww\n".getBytes());
@@ -199,7 +200,7 @@ public class SocketTestActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        mServerIsConnection = false;
+        isRun = false;
         if (mSocketConnectionThread != null && !mSocketConnectionThread.isInterrupted()) {
             mSocketConnectionThread.interrupt();
             mSocketConnectionThread = null;

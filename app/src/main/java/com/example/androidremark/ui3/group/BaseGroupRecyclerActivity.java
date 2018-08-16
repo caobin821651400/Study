@@ -38,9 +38,9 @@ public class BaseGroupRecyclerActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
         // StickyHeader
-        StickyHeaderDecoration decoration = new StickyHeaderDecoration(new StickyHeaderAdapter(BaseGroupRecyclerActivity.this));
-        decoration.setIncludeHeader(false);
-        recyclerView.addItemDecoration(decoration);
+        //StickyHeaderDecoration decoration = new StickyHeaderDecoration(new StickyHeaderAdapter(BaseGroupRecyclerActivity.this));
+//        decoration.setIncludeHeader(false);
+//        recyclerView.addItemDecoration(decoration);
 
         adapter.setDataList(GroupDataSource.getBaseGroupBeanList());
     }

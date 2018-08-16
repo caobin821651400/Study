@@ -18,7 +18,6 @@ public class GroupDataSource {
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
-            BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
@@ -27,7 +26,6 @@ public class GroupDataSource {
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
-            BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
@@ -35,7 +33,6 @@ public class GroupDataSource {
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
             BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeChild, "智能手机行业正处于"));
-            BaseGroupBeanList.add(new BaseGroupBean(BaseGroupBean.typeGroup, "智能手机行业正处于"));
         }
         return BaseGroupBeanList;
     }
