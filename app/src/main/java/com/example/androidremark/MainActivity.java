@@ -44,6 +44,7 @@ import com.example.androidremark.ui3.eventBus.EventBusBean;
 import com.example.androidremark.ui3.eventBus.EventbusActivity;
 import com.example.androidremark.ui3.group.BaseGroupRecyclerActivity;
 import com.example.androidremark.ui3.light.ColorLightActivity;
+import com.example.androidremark.ui3.rv.VerticalTabRvActivity;
 import com.example.androidremark.view.RounProgressActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -104,7 +105,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                 {"状态栏", "状态栏", "CoordinatorLayout", "网易歌单详情", ""},
                 {"其他", "魅族通讯录", "QQ侧滑删除", "权限管理", "界面提示"},
                 {"textview", "span", "划线textview", "", ""},
-                {"动画", "基本动画", "分组recycler", "eventbus", ""},
+                {"动画", "基本动画", "分组recycler", "eventbus", "垂直rv"},
                 {"recycler", "多级展开", "BaseRecycler", "粘性reclcler", "时光轴recycler"},
                 {"曲线", "sin函数", "折线图", "树状图", ""},
         };
@@ -297,6 +298,8 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         launchActivity(EventbusActivity.class, null);
                         break;
                     case R.id.tv_view_four:
+                        //垂直rv
+                        launchActivity(VerticalTabRvActivity.class, null);
                         break;
                 }
                 break;

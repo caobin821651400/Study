@@ -239,7 +239,7 @@ public abstract class XRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T,
      * @param viewType
      * @return
      */
-    private boolean isFooterViewType(int viewType) {
+    public boolean isFooterViewType(int viewType) {
         int position = mFooterViews.indexOfKey(viewType);
         return position >= 0;
     }
@@ -250,7 +250,7 @@ public abstract class XRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T,
      * @param viewType
      * @return
      */
-    private boolean isHeaderViewType(int viewType) {
+    public boolean isHeaderViewType(int viewType) {
         int position = mHeaderViews.indexOfKey(viewType);
         return position >= 0;
     }
@@ -261,7 +261,7 @@ public abstract class XRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T,
      * @param position
      * @return
      */
-    private boolean isFooterPosition(int position) {
+    public boolean isFooterPosition(int position) {
         return position >= (getHeaderCount() + getDataCount());
     }
 
