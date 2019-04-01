@@ -35,14 +35,14 @@ public class BaseRecyclerActivity extends BaseActivity implements SwipeRefreshLa
     }
 
     private void initView() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         initToolBar(toolbar, "recyclermAdapter", true);
 
-        mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe);
+        mSwipeLayout =  findViewById(R.id.swipe);
         mSwipeLayout.setOnRefreshListener(this);
         mSwipeLayout.setColorSchemeResources(R.color.main_color);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = findViewById(R.id.recycler_view);
 
         mRecyclerView.addItemDecoration(new DividerDecoration(Color.parseColor("#C4C4C4"), 2));
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));

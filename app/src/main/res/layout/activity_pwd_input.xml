@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui3.pwd.PwdInputActivity">
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_isPwd="true"
+        app:pwd_maxCount="6"
+        app:pwd_psdType="weChat"
+        app:pwd_rectAngle="0dp" />
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_isPwd="true"
+        app:pwd_maxCount="6"
+        app:pwd_psdType="bottomLine"
+        app:pwd_rectAngle="0dp" />
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_isPwd="false"
+        app:pwd_maxCount="6"
+        app:pwd_psdType="weChat"
+        app:pwd_rectAngle="0dp" />
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_isPwd="false"
+        app:pwd_maxCount="6"
+        app:pwd_psdType="bottomLine"
+        app:pwd_rectAngle="0dp" />
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:pwd_autoSize="true"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_maxCount="6"
+        app:pwd_psdType="block"
+        app:pwd_rectAngle="0dp" />
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:pwd_autoSize="true"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_isPwd="false"
+        app:pwd_maxCount="4"
+        app:pwd_psdType="block"
+        app:pwd_rectAngle="0dp" />
+
+    <com.example.androidremark.ui3.pwd.PwdInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:inputType="number"
+        app:pwd_autoSize="true"
+        app:pwd_divideLineWidth="1dp"
+        app:pwd_isPwd="false"
+        app:pwd_maxCount="6"
+        app:pwd_psdType="weChat"
+        app:pwd_rectAngle="0dp" />
+
+</LinearLayout>

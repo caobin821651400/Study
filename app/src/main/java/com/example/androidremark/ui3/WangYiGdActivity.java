@@ -33,7 +33,7 @@ public class WangYiGdActivity extends BaseActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         final View buttonBar = findViewById(R.id.buttonBarLayout);
-        final View parallax = findViewById(R.id.parallax);
+        final View bgImage = findViewById(R.id.parallax);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,18 +51,19 @@ public class WangYiGdActivity extends BaseActivity {
         final NestedScrollView scrollView = (NestedScrollView) findViewById(R.id.scrollView);
         scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             private int lastScrollY = 0;
-            private int h = MyUtils.dp2px(getApplicationContext(), 200);
+            private int h = MyUtils.dp2px(getApplicationContext(), 200);//滑动多高才完全变色
             private int color = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary) & 0x00ffffff;
 
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
                 Log.e("哈哈 ",scrollY+"");
+                Log.v("固定高 ",h+"");
                 if (lastScrollY < h) {
                     scrollY = Math.min(h, scrollY);
                     mScrollY = scrollY > h ? h : scrollY;
                     buttonBar.setAlpha(1f * mScrollY / h);
                     toolbar.setBackgroundColor(((255 * mScrollY / h) << 24) | color);
-                    parallax.setTranslationY(mOffset - mScrollY);
+                   // bgImage.setTranslationY(-mScrollY);
                 }
                 lastScrollY = scrollY;
             }

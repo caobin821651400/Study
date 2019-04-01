@@ -134,4 +134,22 @@
         <attr name="bar_pointer_halo_radius" format="dimension" />
         <attr name="bar_orientation_horizontal" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="PwdInputView">
+        <attr name="pwd_maxCount" format="integer" />
+        <attr name="pwd_circleColor" format="color" />
+        <attr name="pwd_textSize" format="dimension" />
+        <attr name="pwd_bottomLineColor" format="color" />
+        <attr name="pwd_pwdRadius" format="dimension" />
+        <attr name="pwd_divideLineWidth" format="dimension" />
+        <attr name="pwd_divideLineColor" format="color" />
+        <attr name="pwd_rectAngle" format="dimension" />
+        <attr name="pwd_isPwd" format="boolean" />
+        <attr name="pwd_autoSize" format="boolean" />
+        <attr name="pwd_psdType" format="enum">
+            <enum name="weChat" value="0" />
+            <enum name="bottomLine" value="1" />
+            <enum name="block" value="2" />
+        </attr>
+    </declare-styleable>
 </resources>

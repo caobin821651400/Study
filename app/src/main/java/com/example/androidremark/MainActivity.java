@@ -44,6 +44,7 @@ import com.example.androidremark.ui3.eventBus.EventBusBean;
 import com.example.androidremark.ui3.eventBus.EventbusActivity;
 import com.example.androidremark.ui3.group.BaseGroupRecyclerActivity;
 import com.example.androidremark.ui3.light.ColorLightActivity;
+import com.example.androidremark.ui3.pwd.PwdInputActivity;
 import com.example.androidremark.ui3.rv.VerticalTabRvActivity;
 import com.example.androidremark.view.RounProgressActivity;
 
@@ -108,6 +109,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                 {"动画", "基本动画", "分组recycler", "eventbus", "垂直rv"},
                 {"recycler", "多级展开", "BaseRecycler", "粘性reclcler", "时光轴recycler"},
                 {"曲线", "sin函数", "折线图", "树状图", ""},
+                {"自定义View2", "密码输入框", "", "", ""},
         };
         for (String[] anArray : array) {
             list.add(new MainMenuNameBean(anArray[0], anArray[1], anArray[2], anArray[3], anArray[4]));
@@ -335,6 +337,19 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                     case R.id.tv_view_three:
                         //树状图
                         launchActivity(ColumnCharActivity.class, null);
+                        break;
+                    case R.id.tv_view_four:
+                        break;
+                }
+                break;
+            case 12:
+                switch (view.getId()) {
+                    case R.id.tv_view_one://密码输入框
+                        launchActivity(PwdInputActivity.class, null);
+                        break;
+                    case R.id.tv_view_two:
+                        break;
+                    case R.id.tv_view_three:
                         break;
                     case R.id.tv_view_four:
                         break;

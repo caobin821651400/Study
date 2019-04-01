@@ -68,7 +68,8 @@
         <activity android:name=".ui3.contacts.XContactsActivity" />
         <activity android:name=".ui3.viewpager.ViewPagerActivity" />
         <activity android:name=".ui3.light.ColorLightActivity" />
-        <activity android:name=".ui3.rv.VerticalTabRvActivity"></activity>
+        <activity android:name=".ui3.rv.VerticalTabRvActivity" />
+        <activity android:name=".ui3.pwd.PwdInputActivity"></activity>
     </application>
 
 </manifest>
