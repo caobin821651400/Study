@@ -3,7 +3,7 @@ package com.example.androidremark.watermask.impl
 /**
  * 水印的信息
  */
-interface WatermarkOutward {
+interface WatermarkInfo {
 
     fun getWidth(): Int
 

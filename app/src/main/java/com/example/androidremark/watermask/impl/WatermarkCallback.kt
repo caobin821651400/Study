@@ -7,9 +7,9 @@ import android.view.View
  */
 interface WatermarkCallback {
 
-    fun <V : View> onDismiss(stickerView: V) where V : WatermarkSticker
+    fun <V : View> onDismiss(stickerView: V) where V : WaterMarkSticker
 
-    fun <V : View> onShowing(stickerView: V) where V : WatermarkSticker
+    fun <V : View> onShowing(stickerView: V) where V : WaterMarkSticker
 
-    fun <V : View> onRemove(stickerView: V): Boolean where V : WatermarkSticker
+    fun <V : View> onRemove(stickerView: V): Boolean where V : WaterMarkSticker
 }
