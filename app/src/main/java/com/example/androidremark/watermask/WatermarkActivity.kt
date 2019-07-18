@@ -17,6 +17,11 @@ class WatermarkActivity : BaseActivity() {
 
     private var mImgView: WaterMarkView? = null
     private var bitmap: Bitmap? = null
+    /***需要自己换成本地图片的path***/
+    /***需要自己换成本地图片的path***/
+    /***需要自己换成本地图片的path***/
+    /***需要自己换成本地图片的path***/
+    /***需要自己换成本地图片的path***/
     val imagePath = "/storage/emulated/0/tencent/MicroMsg/WeiXin/mmexport1563196546598.jpg"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,12 +63,12 @@ class WatermarkActivity : BaseActivity() {
 
     fun complete(view: View) {
         val bitmap = mImgView?.saveBitmap()
-        val file=File(Environment.getExternalStorageDirectory().absolutePath+"/aaaa/")
-        if (!file.exists())file.mkdirs()
+        val file = File(Environment.getExternalStorageDirectory().absolutePath + "/aaaa/")
+        if (!file.exists()) file.mkdirs()
         if (bitmap != null) {
             var fout: FileOutputStream? = null
             try {
-                fout = FileOutputStream(Environment.getExternalStorageDirectory().absolutePath+"/aaaa/test.jpg")
+                fout = FileOutputStream(Environment.getExternalStorageDirectory().absolutePath + "/aaaa/test.jpg")
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 80, fout)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
