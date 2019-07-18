@@ -76,8 +76,8 @@ public class XPermission {
     @TargetApi(Build.VERSION_CODES.M)
     public static void requestPermissions(Context context, int requestCode
             , String[] permissions, OnPermissionListener listener) {
+        mOnPermissionListener = listener;
         if (context instanceof Activity) {
-            mOnPermissionListener = listener;
             List<String> deniedPermissions = getDeniedPermissions(context, permissions);
             if (deniedPermissions.size() > 0) {
                 mRequestCode = requestCode;

@@ -1,7 +1,7 @@
 package com.example.androidremark.watermask
 
 import android.graphics.*
-import com.example.androidremark.watermask.impl.WaterMarkSticker
+import com.example.androidremark.watermask.impl.WaterMarkStickerImpl
 import java.util.*
 import kotlin.math.min
 
@@ -26,9 +26,9 @@ class WatermarkCanvs {
     //是否在初始位置
     private var isInitialHoming = false
     //当前选中的水印
-    private var mSticker: WaterMarkSticker? = null
+    private var mSticker: WaterMarkStickerImpl? = null
     //水印集合
-    private var mStickers = ArrayList<WaterMarkSticker>()
+    private var mStickers = ArrayList<WaterMarkStickerImpl>()
     //
     private var matrix = Matrix()
 
@@ -45,6 +45,7 @@ class WatermarkCanvs {
     fun setBitmap(bitmap: Bitmap) {
         if (bitmap == null || bitmap.isRecycled) return
         this.mImageBitmap = bitmap
+        onImageChanged()
     }
 
     /**
@@ -134,16 +135,16 @@ class WatermarkCanvs {
     /**
      *添加一个一个的水印
      */
-    fun <S : WaterMarkSticker> addSticker(sticker: S) {
+    fun <S : WaterMarkStickerImpl> addSticker(sticker: S) {
         moveToForeground(sticker)
     }
 
     /**
      *
      */
-    private fun moveToForeground(sticker: WaterMarkSticker) {
+    private fun moveToForeground(sticker: WaterMarkStickerImpl) {
         if (sticker == null) return
-        moveToBackground(sticker)
+        mSticker?.let { moveToBackground(it) }
 
         if (sticker.isShowing()) {
             mSticker = sticker
@@ -156,15 +157,15 @@ class WatermarkCanvs {
     /**
      *
      */
-    private fun moveToBackground(sticker: WaterMarkSticker) {
+    private fun moveToBackground(sticker: WaterMarkStickerImpl) {
         if (sticker == null) return
-        if (sticker.isShowing()) {
+        if (!sticker.isShowing()) {
             if (!mStickers.contains(sticker))
                 mStickers.add(sticker)
             if (mSticker == sticker)
                 mSticker = null
         } else {
-            sticker.show()
+            sticker.dismiss()
         }
     }
 
@@ -178,15 +179,15 @@ class WatermarkCanvs {
     /**
      *
      */
-    fun onDismiss(sticker: WaterMarkSticker) {
+    fun onDismiss(sticker: WaterMarkStickerImpl) {
         moveToBackground(sticker)
     }
 
     /**
      *显示
      */
-    fun onShowng(sticker: WaterMarkSticker) {
-        if (mSticker != sticker) moveToForeground(sticker)
+    fun onShowing(sticker: WaterMarkStickerImpl) {
+        if (mSticker !== sticker) moveToForeground(sticker)
     }
 
     /**
@@ -194,6 +195,10 @@ class WatermarkCanvs {
      */
     fun getScale(): Float {
         return 1F * mImageFrame.width() / mImageBitmap!!.width
+    }
+
+    fun getFinallyFrame(): RectF {
+        return mFinallyFrame
     }
 
     /**
@@ -211,7 +216,7 @@ class WatermarkCanvs {
     /**
      * 移除水印
      */
-    fun onRemoveSticker(sticker: WaterMarkSticker) {
+    fun onRemoveSticker(sticker: WaterMarkStickerImpl) {
         if (mSticker == sticker) {
             mSticker = null
         } else {
