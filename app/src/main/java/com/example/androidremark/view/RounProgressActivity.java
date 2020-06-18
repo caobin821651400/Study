@@ -11,6 +11,7 @@ import com.example.androidremark.R;
 import com.example.androidremark.base.BaseActivity;
 import com.example.androidremark.utils.net.NetSpeed;
 import com.example.androidremark.utils.net.NetSpeedTimer;
+import com.example.androidremark.ui3.dashboard.DashBoardView;
 
 public class RounProgressActivity extends BaseActivity {
 

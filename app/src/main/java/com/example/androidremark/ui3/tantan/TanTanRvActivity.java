@@ -3,6 +3,7 @@ package com.example.androidremark.ui3.tantan;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,14 +43,20 @@ public class TanTanRvActivity extends BaseActivity {
         mRecyclerView = findViewById(R.id.rv);
 
         mDatas = SwipeCardBean.initDatas();
+
+        //初始化一些配置
+        CardConfig.initConfig(this);
+
+
         mRecyclerView.setLayoutManager(new SwipeCardLayoutManager());
         mAdapter = new MAdapter(mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setDataList(mDatas);
-        //初始化一些配置
-        CardConfig.initConfig(this);
 
         //TODO 滑动
+        ItemTouchHelper.Callback callback = new SwipeCardCallback(mRecyclerView, mAdapter, mDatas);
+        ItemTouchHelper helper = new ItemTouchHelper(callback);
+        helper.attachToRecyclerView(mRecyclerView);
     }
 
 

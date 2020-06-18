@@ -23,7 +23,7 @@
         app:textIsDisplayable="false" />
 
 
-    <com.example.androidremark.view.DashBoardView
+    <com.example.androidremark.ui3.dashboard.DashBoardView
         android:id="@+id/dashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

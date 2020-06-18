@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.androidremark.utils.XLogUtils;
+
 /**
  * ====================================================
  *
@@ -46,6 +48,9 @@ public class SwipeCardLayoutManager extends RecyclerView.LayoutManager {
 
         //遍历每一个View
         for (int i = startPosition; i < itemCount; i++) {
+
+            XLogUtils.d("itemCount-->" + itemCount);
+            XLogUtils.d("startPosition-->" + startPosition);
 
             //复用
             View view = recycler.getViewForPosition(i);

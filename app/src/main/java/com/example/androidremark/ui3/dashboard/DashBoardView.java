@@ -1,4 +1,4 @@
-package com.example.androidremark.view;
+package com.example.androidremark.ui3.dashboard;
 
 import android.content.Context;
 import android.content.res.Resources;
