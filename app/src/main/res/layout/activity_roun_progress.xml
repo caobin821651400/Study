@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.example.androidremark.view.RounProgressActivity">
 
 
@@ -12,12 +13,32 @@
         android:id="@+id/progress_bar_success"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="50dp"
         app:max="100"
         app:progress="30"
         app:ringColor="#F2E3C4"
         app:ringProgressColor="#d950eb"
         app:ringWidth="2.5dp"
-        app:textIsDisplayable="false"
-        app:textColor="#EBB350" />
+        app:textColor="#EBB350"
+        app:textIsDisplayable="false" />
+
+
+    <com.example.androidremark.view.DashBoardView
+        android:id="@+id/dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="20dp" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="aaaa"
+        android:text="进度+500kb/s"
+        android:textAllCaps="false" />
 
 </LinearLayout>

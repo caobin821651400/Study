@@ -110,13 +110,13 @@ public class ObjectAnimActivity extends BaseActivity implements View.OnClickList
 //            set.start();
 
     //
-    //DecelerateInterpolator减速插值器
-    //AccelerateDecelerateInterpolator先加速后减速
-    //AccelerateInterpolator加速
-    //AnticipateInterpolator先回弹
-    //OvershootInterpolator后回弹
-    // AnticipateOvershootInterpolator两者都有
-    //BounceInterpolator弹力球
+    //DecelerateInterpolator 减速插值器
+    //AccelerateDecelerateInterpolator 先加速后减速
+    //AccelerateInterpolator 加速
+    //AnticipateInterpolator 先回弹
+    //OvershootInterpolator 后回弹
+    // AnticipateOvershootInterpolator 两者都有
+    //BounceInterpolator 弹力球
 
     //alpha 透明度
     //rotation z轴旋转

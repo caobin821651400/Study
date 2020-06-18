@@ -1,15 +1,93 @@
 package com.example.androidremark.view;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
 
 import com.example.androidremark.R;
 import com.example.androidremark.base.BaseActivity;
+import com.example.androidremark.utils.net.NetSpeed;
+import com.example.androidremark.utils.net.NetSpeedTimer;
 
 public class RounProgressActivity extends BaseActivity {
+
+    private RoundProgressBar progressBarSuccess;
+    private DashBoardView dashboard;
+
+
+    //测速
+    private NetSpeedTimer mNetSpeedTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roun_progress);
+
+
+        progressBarSuccess = findViewById(R.id.progress_bar_success);
+
+        dashboard = findViewById(R.id.dashboard);
+
+
+        //测速
+        mNetSpeedTimer = new NetSpeedTimer(this, new NetSpeed(), mHandler).setDelayTime(1000).setPeriodTime(1000);
+        mNetSpeedTimer.startSpeedTimer();
+    }
+
+    private int progress = 0;
+    private int count = 0;
+
+    public void aaaa(View view) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                count++;
+
+                while (count < 200) {
+                    mHandler.sendEmptyMessage(1);
+
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+            }
+        }).start();
+
+
+    }
+
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 1) {
+                progress += 500;
+                dashboard.setProgress(progress);
+            } else if (msg.what == NetSpeedTimer.NET_SPEED_TIMER_DEFAULT) {
+                long speed = (long) msg.obj;
+                Log.d("网速-->", speed + "");
+                dashboard.setProgress((int) speed);
+            }
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        if (null != mNetSpeedTimer) {
+            mNetSpeedTimer.stopSpeedTimer();
+        }
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
+        super.onDestroy();
     }
 }
