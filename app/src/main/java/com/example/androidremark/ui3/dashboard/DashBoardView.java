@@ -35,16 +35,16 @@ public class DashBoardView extends View {
     private Paint mPaint;
     private Path mPath;
 
-    private int kbps = 1000 * 8;
+    //    private int kbps = 1000 * 8;
     private int mMinSpeed = 0; // 最小带宽kb/s
-    private int mMaxSpeed = 450 * 1000 * 8; // 最大带宽kb/s
+    private int mMaxSpeed = 450 * 1024; // 最大带宽kb/s 3686400
     private int mCurrentSpeed = 0;//当前带宽  带宽粗略计算 网速*8
     private int mStartAngle = 165; // 起始角度
     private int mStartSpaceAngle = 3; // 起始向上偏移角度
     private int mSweepAngle = 210; // 绘制角度
     private int mCreditValue = 650; // 网速
     private int mSection = 10; //等分份数
-    private String mHeaderText = "0K/s"; // 表头
+    private String mHeaderText = "0k/s"; // 表头
     private String mXzsd = "下载速度";
     private int mXzsdColor;
     private int mPLRadius; // 指针长半径
@@ -279,16 +279,17 @@ public class DashBoardView extends View {
     /**
      * 设置进度单位(kb/s)
      *
-     * @param progress
+     * @param progress 传过来的是kb/s是网速
      */
     public void setProgress(int progress) {
         progress = progress * 8;
         if (mCurrentSpeed == progress || progress < mMinSpeed || progress > mMaxSpeed) {
             return;
         }
+        //计算带宽
         mCurrentSpeed = progress;
-        if (progress >= kbps) {
-            mHeaderText = String.format("%.1f", (mCurrentSpeed * 1f / kbps)) + "m/s";
+        if (progress >= 1024) {
+            mHeaderText = String.format("%.1f", (progress * 1f / 1000)) + "m/s";
         } else {
             mHeaderText = mCurrentSpeed + "k/s";
         }

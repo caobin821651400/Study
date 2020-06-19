@@ -75,7 +75,7 @@ public class RounProgressActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
-                progress += 500*8;
+                progress += 500;
                 dashboard.setProgress(progress);
                 button.setText("网速*8："+progress);
             } else if (msg.what == NetSpeedTimer.NET_SPEED_TIMER_DEFAULT) {
