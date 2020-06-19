@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.androidremark.R;
 import com.example.androidremark.base.BaseActivity;
@@ -35,20 +36,20 @@ public class RounProgressActivity extends BaseActivity {
 
         //测速
         mNetSpeedTimer = new NetSpeedTimer(this, new NetSpeed(), mHandler).setDelayTime(1000).setPeriodTime(1000);
-        mNetSpeedTimer.startSpeedTimer();
+//        mNetSpeedTimer.startSpeedTimer();
     }
 
     private int progress = 0;
-    private int count = 0;
+
+    private Button button;
+    private boolean isStop = false;
 
     public void aaaa(View view) {
-
+        button = (Button) view;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                count++;
-
-                while (count < 200) {
+                while (!isStop) {
                     mHandler.sendEmptyMessage(1);
 
                     try {
@@ -61,8 +62,11 @@ public class RounProgressActivity extends BaseActivity {
 
             }
         }).start();
+    }
 
 
+    public void stop(View view) {
+        isStop = !isStop;
     }
 
     @SuppressLint("HandlerLeak")
@@ -71,8 +75,9 @@ public class RounProgressActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
-                progress += 500;
+                progress += 500*8;
                 dashboard.setProgress(progress);
+                button.setText("网速*8："+progress);
             } else if (msg.what == NetSpeedTimer.NET_SPEED_TIMER_DEFAULT) {
                 long speed = (long) msg.obj;
                 Log.d("网速-->", speed + "");
@@ -91,4 +96,5 @@ public class RounProgressActivity extends BaseActivity {
         }
         super.onDestroy();
     }
+
 }

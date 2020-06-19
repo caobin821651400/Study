@@ -41,4 +41,12 @@
         android:text="进度+500kb/s"
         android:textAllCaps="false" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="stop"
+        android:text="停止"
+        android:textAllCaps="false" />
+
 </LinearLayout>

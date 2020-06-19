@@ -35,14 +35,15 @@ public class DashBoardView extends View {
     private Paint mPaint;
     private Path mPath;
 
-    private int mMinSpeed = 0; // 最小网速kb/s
-    private int mMaxSpeed = 120 * 1000; // 最大网速kb/s
-    private int mCurrentSpeed = 0;//当前网速kb/s
+    private int kbps = 1000 * 8;
+    private int mMinSpeed = 0; // 最小带宽kb/s
+    private int mMaxSpeed = 450 * 1000 * 8; // 最大带宽kb/s
+    private int mCurrentSpeed = 0;//当前带宽  带宽粗略计算 网速*8
     private int mStartAngle = 165; // 起始角度
     private int mStartSpaceAngle = 3; // 起始向上偏移角度
     private int mSweepAngle = 210; // 绘制角度
     private int mCreditValue = 650; // 网速
-    private int mSection = 7; //等分份数
+    private int mSection = 10; //等分份数
     private String mHeaderText = "0K/s"; // 表头
     private String mXzsd = "下载速度";
     private int mXzsdColor;
@@ -154,7 +155,7 @@ public class DashBoardView extends View {
         canvas.drawLine(x0, y0, x1, y1, mPaint);//第一个刻度线
 
         //分成7份,第一条已经画过了
-        float degree = (mSweepAngle - mStartSpaceAngle * 2) / (mSection - 1);
+        float degree = (mSweepAngle - mStartSpaceAngle * 2) * 1f / (mSection - 1);
         for (int i = 0; i < mSection - 1; i++) {
             canvas.rotate(degree, mCenterX, mCenterY);
             canvas.drawLine(x0, y0, x1, y1, mPaint);
@@ -174,12 +175,13 @@ public class DashBoardView extends View {
 
             // 正起始角度减去θ使文字居中对准长刻度
             float startAngle;
+            //位置稍微调整下，三位数宽一点
             if (i == 0) {
                 startAngle = mStartAngle + i * (mSweepAngle / (mSection - 1)) - θ + 2;
-            } else if (i > mSection - 3) {//三位数 100和120稍微宽点
-                startAngle = mStartAngle + i * (mSweepAngle / (mSection - 1)) - θ - 8;
+            } else if (i == 1) {
+                startAngle = mStartAngle + i * (mSweepAngle / (mSection - 1)) - θ - 1;
             } else {
-                startAngle = mStartAngle + i * (mSweepAngle / (mSection - 1)) - θ - 2;
+                startAngle = mStartAngle + i * (mSweepAngle / (mSection - 1)) - θ - 3;
             }
 
             mPath.addArc(
@@ -188,7 +190,7 @@ public class DashBoardView extends View {
                     mSweepAngle
             );
             //沿着圆弧path画刻度文字
-            canvas.drawTextOnPath(String.valueOf(20 * i), mPath, 0, dp2px(12), mPaint);
+            canvas.drawTextOnPath(String.valueOf(50 * i), mPath, 0, dp2px(12), mPaint);
         }
 
 
@@ -280,14 +282,15 @@ public class DashBoardView extends View {
      * @param progress
      */
     public void setProgress(int progress) {
+        progress = progress * 8;
         if (mCurrentSpeed == progress || progress < mMinSpeed || progress > mMaxSpeed) {
             return;
         }
         mCurrentSpeed = progress;
-        if (progress >= 1000) {
-            mHeaderText = String.format("%.1f", (mCurrentSpeed * 1f / 1000)) + "M/s";
+        if (progress >= kbps) {
+            mHeaderText = String.format("%.1f", (mCurrentSpeed * 1f / kbps)) + "m/s";
         } else {
-            mHeaderText = mCurrentSpeed + "K/s";
+            mHeaderText = mCurrentSpeed + "k/s";
         }
         postInvalidate();
     }
