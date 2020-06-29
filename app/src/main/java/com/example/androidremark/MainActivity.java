@@ -135,7 +135,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                     case R.id.tv_view_one:
                         launchActivity(ChartActivity.class, null);
                         break;
-                    case R.id.tv_view_two:
+                    case R.id.tv_view_two://支付完成
                         launchActivity(ALiPayActivity.class, null);
                         break;
                     case R.id.tv_view_three:
