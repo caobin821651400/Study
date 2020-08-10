@@ -152,4 +152,13 @@
             <enum name="block" value="2" />
         </attr>
     </declare-styleable>
+
+    <!--rv进度条-->
+    <declare-styleable name="XRvHorizontalProgress">
+        <attr name="xrv_max_full" format="boolean" />
+        <attr name="xrv_progress_drawable" format="reference" />
+        <attr name="xrv_background" format="reference" />
+        <attr name="xrv_progress_width" format="dimension" />
+
+    </declare-styleable>
 </resources>

@@ -36,7 +36,6 @@ public class XCalendarView extends LinearLayout {
     private CalendarAdapter mAdapter;
     ArrayList<calendarBean> cells;
     private List<Date> markList = new ArrayList<>();
-    ;
     String curMonthFormat = "yyyy-MM";
 
     private OnDateSelectedListener onDateSelectedListener;
