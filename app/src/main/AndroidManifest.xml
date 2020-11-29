@@ -75,6 +75,7 @@
         <activity android:name=".ui3.rv.VerticalTabRvActivity" />
         <activity android:name=".ui3.pwd.PwdInputActivity" />
         <activity android:name=".ui3.dashboard.DashBoardActivity" />
+        <activity android:name=".ui2.drag.DragStickerActivity" />
     </application>
 
 </manifest>

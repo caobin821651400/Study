@@ -73,7 +73,7 @@ public class PopupTestActivity extends BaseActivity implements CommonPopupWindow
                 .setView(R.layout.popup_left_or_right)
                 .setWidthAndHeight(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 .setAnimationStyle(R.style.AnimRight)
-                .setBackGroundLevel(0.5f)//取值范围0.0f-1.0f 值越小越暗
+                .setBackGroundLevel(1f)//取值范围0.0f-1.0f 值越小越暗
                 .setViewOnclickListener(this)
                 .create();
         popupWindow.showAsDropDown(view, -popupWindow.getWidth(), -view.getHeight());

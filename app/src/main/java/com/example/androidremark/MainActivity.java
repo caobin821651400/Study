@@ -32,6 +32,7 @@ import com.example.androidremark.ui.textview.span.SpanActivity;
 import com.example.androidremark.ui2.baserecycler.BaseRecyclerActivity;
 import com.example.androidremark.ui2.button.SwitchButtonActivity;
 import com.example.androidremark.ui2.calendar.CalendarActivity;
+import com.example.androidremark.ui2.drag.DragStickerActivity;
 import com.example.androidremark.ui2.grouprecycler.GroupRecyclerActivity;
 import com.example.androidremark.ui2.meituan.MTOutFoodActivity;
 import com.example.androidremark.ui2.sinmath.SinActivity;
@@ -114,7 +115,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                 {"recycler", "多级展开", "BaseRecycler", "粘性reclcler", "时光轴recycler"},
                 {"曲线", "sin函数", "折线图", "树状图", ""},
                 {"自定义View2", "密码输入框", "水印", "探探卡片滑动", "仪表盘"},
-                {"自定义View3", "RV进度条", "", "", ""},
+                {"自定义View3", "RV进度条", "拖拽吸边", "", ""},
         };
         for (String[] anArray : array) {
             list.add(new MainMenuNameBean(anArray[0], anArray[1], anArray[2], anArray[3], anArray[4]));
@@ -369,6 +370,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         launchActivity(RvProgressActivity.class,null);
                         break;
                     case R.id.tv_view_two://
+                        launchActivity(DragStickerActivity.class,null);
                         break;
                     case R.id.tv_view_three://
                         break;
