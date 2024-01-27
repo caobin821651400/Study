@@ -22,11 +22,13 @@ import com.example.androidremark.ui.flow.myflow.MyFlowActivity;
 import com.example.androidremark.ui.imageview.ScratchActivity;
 import com.example.androidremark.ui.interfaceloading.TipActivity;
 import com.example.androidremark.ui.layout.CoordinatorLayoutActivity;
+import com.example.androidremark.ui.lizi.LiZiActivity;
 import com.example.androidremark.ui.payment.ALiPayActivity;
 import com.example.androidremark.ui.popup.PopupTestActivity;
 import com.example.androidremark.ui.qq.SwipeMenuActivity;
 import com.example.androidremark.ui.recycler.RecyclerViewActivity;
 import com.example.androidremark.ui.recycler.sticky.StickyRecyclerActivity;
+import com.example.androidremark.ui.recycler.sticky2.StickyRvActivity;
 import com.example.androidremark.ui.textview.StrikeTextViewActivity;
 import com.example.androidremark.ui.textview.span.SpanActivity;
 import com.example.androidremark.ui2.baserecycler.BaseRecyclerActivity;
@@ -41,6 +43,7 @@ import com.example.androidremark.ui2.xloadingdialog.XLoadingDialogActivity;
 import com.example.androidremark.ui3.WangYiGdActivity;
 import com.example.androidremark.ui3.column.ColumnCharActivity;
 import com.example.androidremark.ui3.contacts.XContactsActivity;
+import com.example.androidremark.ui3.dashboard.DashBoardActivity;
 import com.example.androidremark.ui3.eventBus.EventBusBean;
 import com.example.androidremark.ui3.eventBus.EventbusActivity;
 import com.example.androidremark.ui3.group.BaseGroupRecyclerActivity;
@@ -50,7 +53,6 @@ import com.example.androidremark.ui3.rv.RvProgressActivity;
 import com.example.androidremark.ui3.rv.VerticalTabRvActivity;
 import com.example.androidremark.ui3.tantan.TanTanRvActivity;
 import com.example.androidremark.view.RounProgressActivity;
-import com.example.androidremark.ui3.dashboard.DashBoardActivity;
 import com.example.androidremark.watermask.WatermarkActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -115,7 +117,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                 {"recycler", "多级展开", "BaseRecycler", "粘性reclcler", "时光轴recycler"},
                 {"曲线", "sin函数", "折线图", "树状图", ""},
                 {"自定义View2", "密码输入框", "水印", "探探卡片滑动", "仪表盘"},
-                {"自定义View3", "RV进度条", "拖拽吸边", "", ""},
+                {"自定义View3", "RV进度条", "拖拽吸边", "rv吸顶", "粒子漩涡动画"},
         };
         for (String[] anArray : array) {
             list.add(new MainMenuNameBean(anArray[0], anArray[1], anArray[2], anArray[3], anArray[4]));
@@ -360,21 +362,23 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         launchActivity(TanTanRvActivity.class, null);
                         break;
                     case R.id.tv_view_four:
-                        launchActivity(DashBoardActivity.class,null);
+                        launchActivity(DashBoardActivity.class, null);
                         break;
                 }
                 break;
             case 13:
                 switch (view.getId()) {
                     case R.id.tv_view_one://rv进度条
-                        launchActivity(RvProgressActivity.class,null);
+                        launchActivity(RvProgressActivity.class, null);
                         break;
                     case R.id.tv_view_two://
-                        launchActivity(DragStickerActivity.class,null);
+                        launchActivity(DragStickerActivity.class, null);
                         break;
                     case R.id.tv_view_three://
+                        launchActivity(StickyRvActivity.class, null);
                         break;
                     case R.id.tv_view_four:
+                        launchActivity(LiZiActivity.class, null);
                         break;
                 }
                 break;

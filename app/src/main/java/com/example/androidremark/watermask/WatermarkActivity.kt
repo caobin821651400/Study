@@ -22,12 +22,15 @@ class WatermarkActivity : BaseActivity() {
     /***需要自己换成本地图片的path***/
     /***需要自己换成本地图片的path***/
     /***需要自己换成本地图片的path***/
-    val imagePath = "/storage/emulated/0/tencent/MicroMsg/WeiXin/mmexport1563196546598.jpg"
+    val imagePath = "/storage/sdcard0/1/下载.jpg"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        XPermission.requestPermissions(this, 1024, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
+        XPermission.requestPermissions(this, 1024, arrayOf(
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ),
                 object : XPermission.OnPermissionListener {
                     override fun onPermissionDenied() {
 
@@ -63,12 +66,12 @@ class WatermarkActivity : BaseActivity() {
 
     fun complete(view: View) {
         val bitmap = mImgView?.saveBitmap()
-        val file = File(Environment.getExternalStorageDirectory().absolutePath + "/aaaa/")
+        val file = File(Environment.getExternalStorageDirectory().absolutePath + "/1/")
         if (!file.exists()) file.mkdirs()
         if (bitmap != null) {
             var fout: FileOutputStream? = null
             try {
-                fout = FileOutputStream(Environment.getExternalStorageDirectory().absolutePath + "/aaaa/test.jpg")
+                fout = FileOutputStream(Environment.getExternalStorageDirectory().absolutePath + "/1/test.jpg")
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 80, fout)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
