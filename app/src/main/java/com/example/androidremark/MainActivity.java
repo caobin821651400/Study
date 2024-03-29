@@ -48,6 +48,7 @@ import com.example.androidremark.ui3.eventBus.EventBusBean;
 import com.example.androidremark.ui3.eventBus.EventbusActivity;
 import com.example.androidremark.ui3.group.BaseGroupRecyclerActivity;
 import com.example.androidremark.ui3.light.ColorLightActivity;
+import com.example.androidremark.ui3.photocropper.PhotocropperActivity;
 import com.example.androidremark.ui3.pwd.PwdInputActivity;
 import com.example.androidremark.ui3.rv.RvProgressActivity;
 import com.example.androidremark.ui3.rv.VerticalTabRvActivity;
@@ -118,6 +119,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                 {"曲线", "sin函数", "折线图", "树状图", ""},
                 {"自定义View2", "密码输入框", "水印", "探探卡片滑动", "仪表盘"},
                 {"自定义View3", "RV进度条", "拖拽吸边", "rv吸顶", "粒子漩涡动画"},
+                {"自定义View4", "区域拖拽", "", "", ""},
         };
         for (String[] anArray : array) {
             list.add(new MainMenuNameBean(anArray[0], anArray[1], anArray[2], anArray[3], anArray[4]));
@@ -379,6 +381,19 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         break;
                     case R.id.tv_view_four:
                         launchActivity(LiZiActivity.class, null);
+                        break;
+                }
+                break;
+            case 14:
+                switch (view.getId()) {
+                    case R.id.tv_view_one://rv进度条
+                        launchActivity(PhotocropperActivity.class, null);
+                        break;
+                    case R.id.tv_view_two://
+                        break;
+                    case R.id.tv_view_three://
+                        break;
+                    case R.id.tv_view_four:
                         break;
                 }
                 break;
