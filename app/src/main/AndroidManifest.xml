@@ -78,7 +78,9 @@
         <activity android:name=".ui2.drag.DragStickerActivity" />
         <activity android:name=".ui.recycler.sticky2.StickyRvActivity" />
         <activity android:name=".ui.lizi.LiZiActivity" />
-        <activity android:name=".ui3.photocropper.PhotocropperActivity" />
+        <activity android:name=".ui3.photocropper.PhotocropperActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".ui3.drag.DragActivity" />
     </application>
 
 </manifest>

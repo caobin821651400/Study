@@ -23,7 +23,7 @@ import android.view.View;
  * Created by alex on 12/4/17.
  */
 
-public class CropOverlayView extends View {
+public class OverlayView extends View {
 
     private int defaultMargin = 100;
     private int minDistance = 100;
@@ -41,11 +41,11 @@ public class CropOverlayView extends View {
 
     private int minX, maxX, minY, maxY;
 
-    public CropOverlayView(Context context) {
+    public OverlayView(Context context) {
         super(context);
     }
 
-    public CropOverlayView(Context context, @Nullable AttributeSet attrs) {
+    public OverlayView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -155,7 +155,7 @@ public class CropOverlayView extends View {
 
         Log.e("stk",
                 "vertextPoints=" +
-                topLeft.toString() + " " + topRight.toString() + " " + bottomRight.toString() + " " + bottomLeft.toString());
+                        topLeft.toString() + " " + topRight.toString() + " " + bottomRight.toString() + " " + bottomLeft.toString());
 
     }
     private void drawEdge(Canvas canvas) {
@@ -405,10 +405,10 @@ public class CropOverlayView extends View {
             Log.e("stk", cut.getWidth() + "x" + cut.getHeight());
 
             Log.e("stk", "cutPoints="
-                        + cutTopLeft.toString() + " "
-                        + cutTopRight.toString() + " "
-                        + cutBottomRight.toString() + " "
-                        + cutBottomLeft.toString() + " ");
+                    + cutTopLeft.toString() + " "
+                    + cutTopRight.toString() + " "
+                    + cutBottomRight.toString() + " "
+                    + cutBottomLeft.toString() + " ");
 
             float width = cut.getWidth();
             float height = cut.getHeight();

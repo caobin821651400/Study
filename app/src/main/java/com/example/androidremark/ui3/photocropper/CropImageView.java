@@ -14,13 +14,14 @@ import android.widget.ImageView;
 import com.example.androidremark.R;
 
 /**
- * Created by alex on 12/4/17.
+ * @author: cb
+ * @date: 2024/3/29
+ * @desc: 描述
  */
-
 public class CropImageView extends FrameLayout {
 
     private ImageView mImageView;
-    private CropOverlayView mCropOverlayView;
+    private StandJumpRangeView mCropOverlayView;
 
     public CropImageView(@NonNull Context context) {
         super(context);
@@ -31,7 +32,7 @@ public class CropImageView extends FrameLayout {
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.crop_image_view, this, true);
         mImageView = (ImageView) v.findViewById(R.id.img_crop);
-        mCropOverlayView = (CropOverlayView) v.findViewById(R.id.overlay_crop);
+        mCropOverlayView = (StandJumpRangeView) v.findViewById(R.id.overlay_crop);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class CropImageView extends FrameLayout {
 
     public void setImageBitmap(Bitmap bitmap) {
         mImageView.setImageBitmap(bitmap);
-        mCropOverlayView.setBitmap(bitmap);
+        mCropOverlayView.setData();
     }
 
     public void crop(CropListener listener, boolean needStretch) {

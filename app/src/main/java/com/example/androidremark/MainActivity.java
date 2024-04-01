@@ -44,6 +44,7 @@ import com.example.androidremark.ui3.WangYiGdActivity;
 import com.example.androidremark.ui3.column.ColumnCharActivity;
 import com.example.androidremark.ui3.contacts.XContactsActivity;
 import com.example.androidremark.ui3.dashboard.DashBoardActivity;
+import com.example.androidremark.ui3.drag.DragActivity;
 import com.example.androidremark.ui3.eventBus.EventBusBean;
 import com.example.androidremark.ui3.eventBus.EventbusActivity;
 import com.example.androidremark.ui3.group.BaseGroupRecyclerActivity;
@@ -119,7 +120,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                 {"曲线", "sin函数", "折线图", "树状图", ""},
                 {"自定义View2", "密码输入框", "水印", "探探卡片滑动", "仪表盘"},
                 {"自定义View3", "RV进度条", "拖拽吸边", "rv吸顶", "粒子漩涡动画"},
-                {"自定义View4", "区域拖拽", "", "", ""},
+                {"自定义View4", "区域拖拽", "区域拖拽1", "", ""},
         };
         for (String[] anArray : array) {
             list.add(new MainMenuNameBean(anArray[0], anArray[1], anArray[2], anArray[3], anArray[4]));
@@ -390,6 +391,7 @@ public class MainActivity extends BaseActivity implements MainMenuItemListener {
                         launchActivity(PhotocropperActivity.class, null);
                         break;
                     case R.id.tv_view_two://
+                        launchActivity(DragActivity.class, null);
                         break;
                     case R.id.tv_view_three://
                         break;

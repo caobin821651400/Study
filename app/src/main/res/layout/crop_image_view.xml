@@ -16,7 +16,7 @@
             android:scaleType="fitCenter"
             />
 
-        <com.example.androidremark.ui3.photocropper.CropOverlayView
+        <com.example.androidremark.ui3.photocropper.StandJumpRangeView
             android:id="@+id/overlay_crop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
