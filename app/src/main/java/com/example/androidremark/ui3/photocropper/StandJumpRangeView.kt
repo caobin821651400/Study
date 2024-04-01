@@ -132,11 +132,6 @@ class StandJumpRangeView @JvmOverloads constructor(
             dotsRadius.toFloat(),
             mDotsPaint
         )
-
-//        Log.e(
-//            "stk", "vertextPoints=" +
-//                    topLeftPoint.toString() + " " + topRightPoint.toString() + " " + bottomRightPoint.toString() + " " + bottomLeftPoint.toString()
-//        )
     }
 
     /**
@@ -238,26 +233,26 @@ class StandJumpRangeView @JvmOverloads constructor(
     private fun onActionMove(event: MotionEvent): Boolean {
         if (mCurrPressDots == DotsPosition.UNKNOWN) return true
 
-        val deltaX = (event.x - touchDownX).toInt()
-        val deltaY = (event.y - touchDownY).toInt()
+        val intX = event.x.toInt()
+        val intY = event.y.toInt()
         when (mCurrPressDots) {
             DotsPosition.TOP_LEFT -> {
-                adjustTopLeft(deltaX, deltaY)
+                adjustTopLeft(intX, intY)
                 invalidate()
             }
 
             DotsPosition.TOP_RIGHT -> {
-                adjustTopRight(deltaX, deltaY)
+                adjustTopRight(intX, intY)
                 invalidate()
             }
 
             DotsPosition.BOTTOM_LEFT -> {
-                adjustBottomLeft(deltaX, deltaY)
+                adjustBottomLeft(intX, intY)
                 invalidate()
             }
 
             DotsPosition.BOTTOM_RIGHT -> {
-                adjustBottomRight(deltaX, deltaY)
+                adjustBottomRight(intX, intY)
                 invalidate()
             }
 
@@ -272,7 +267,12 @@ class StandJumpRangeView @JvmOverloads constructor(
             }
 
             DotsPosition.TOP_CENTER -> {
-                updateCenterPoint(event.x.toInt(), topLeftPoint, topRightPoint, topCenterPoint)
+                updateCenterPoint(
+                    event.x.toInt(),
+                    topLeftPoint,
+                    topRightPoint,
+                    topCenterPoint
+                )
                 invalidate()
             }
         }
@@ -315,66 +315,91 @@ class StandJumpRangeView @JvmOverloads constructor(
         centerPoint.set(touchX, newY)
     }
 
-    private fun adjustTopLeft(deltaX: Int, deltaY: Int) {
-//        if (deltaX > topCenterPoint.x - dotsRadius * 2) {
-//            return
-//        }
-        var newX = topLeftPoint.x + deltaX
-        if (newX < minX + defaultMargin) newX = minX + defaultMargin
-        if (newX > maxX - defaultMargin) newX = maxX - defaultMargin
-        var newY = topLeftPoint.y + deltaY
-        if (newY < minY + defaultMargin) newY = minY + defaultMargin
-        if (newY > maxY - defaultMargin) newY = maxY - defaultMargin
+    /**
+     * 左上点
+     * @param touchX Int
+     * @param touchY Int
+     */
+    private fun adjustTopLeft(touchX: Int, touchY: Int) {
+        //右边界x坐标要小于中间的点
+        if (touchX > topCenterPoint.x - dotsRadius * 2) {
+            return
+        }
+        //下边界,y坐标要小于左侧顶点
+        if (touchY > bottomLeftPoint.y - dotsRadius * 2) {
+            return
+        }
+        //左边界
+        val newX = touchX.coerceAtLeast(minX + defaultMargin)
+        //上边界
+        val newY = touchY.coerceAtLeast(minY + defaultMargin)
         topLeftPoint.set(newX, newY)
-
-
         updateCenterPoint(topCenterPoint.x, topLeftPoint, topRightPoint, topCenterPoint)
-
-//        //顶部中间点
-//        val topCenterX = (topLeftPoint.x + topRightPoint.x) / 2
-//        val topCenterY = (topLeftPoint.y + topRightPoint.y) / 2
-//        topCenterPoint.set(topCenterX, topCenterY)
     }
 
-    private fun adjustTopRight(deltaX: Int, deltaY: Int) {
-        var newX = topRightPoint.x + deltaX
-        if (newX > maxX - defaultMargin) newX = maxX - defaultMargin
-        if (newX < minX + defaultMargin) newX = minX + defaultMargin
-        var newY = topRightPoint.y + deltaY
-        if (newY < minY + defaultMargin) newY = minY + defaultMargin
-        if (newY > maxY - defaultMargin) newY = maxY - defaultMargin
+    /**
+     * 右上点
+     * @param touchX Int
+     * @param touchY Int
+     */
+    private fun adjustTopRight(touchX: Int, touchY: Int) {
+        //左边界
+        if (touchX < topCenterPoint.x + dotsRadius * 2) {
+            return
+        }
+        //下边界,y坐标要小于左侧顶点
+        if (touchY > bottomRightPoint.y - dotsRadius * 2) {
+            return
+        }
+        //右边界
+        val newX = touchX.coerceAtMost(maxX - defaultMargin)
+        //上边界
+        val newY = touchY.coerceAtLeast(minY + defaultMargin)
         topRightPoint.set(newX, newY)
-        //顶部中间点
-        val topCenterX = (topLeftPoint.x + topRightPoint.x) / 2
-        val topCenterY = (topLeftPoint.y + topRightPoint.y) / 2
-        topCenterPoint.set(topCenterX, topCenterY)
+        updateCenterPoint(topCenterPoint.x, topLeftPoint, topRightPoint, topCenterPoint)
     }
 
-    private fun adjustBottomLeft(deltaX: Int, deltaY: Int) {
-        var newX = bottomLeftPoint.x + deltaX
-        if (newX < minX + defaultMargin) newX = minX + defaultMargin
-        if (newX > maxX - defaultMargin) newX = maxX - defaultMargin
-        var newY = bottomLeftPoint.y + deltaY
-        if (newY > maxY - defaultMargin) newY = maxY - defaultMargin
-        if (newY < minY + defaultMargin) newY = minY + defaultMargin
+    /**
+     * 左下点
+     * @param touchX Int
+     * @param touchY Int
+     */
+    private fun adjustBottomLeft(touchX: Int, touchY: Int) {
+        //右边界x坐标要小于中间的点
+        if (touchX > bottomCenterPoint.x - dotsRadius * 2) {
+            return
+        }
+        //上边界
+        if (touchY < topLeftPoint.y + dotsRadius * 2) {
+            return
+        }
+        //左边界
+        val newX = touchX.coerceAtLeast(minX + defaultMargin)
+        //下边界
+        val newY = touchY.coerceAtMost(maxY - defaultMargin)
         bottomLeftPoint.set(newX, newY)
-        //底部中间点
-        val bottomCenterX = (bottomLeftPoint.x + bottomRightPoint.x) / 2
-        val bottomCenterY = (bottomLeftPoint.y + bottomRightPoint.y) / 2
-        bottomCenterPoint.set(bottomCenterX, bottomCenterY)
+        updateCenterPoint(bottomCenterPoint.x, bottomLeftPoint, bottomRightPoint, bottomCenterPoint)
     }
 
-    private fun adjustBottomRight(deltaX: Int, deltaY: Int) {
-        var newX = bottomRightPoint.x + deltaX
-        if (newX > maxX - defaultMargin) newX = maxX - defaultMargin
-        if (newX < minX + defaultMargin) newX = minX + defaultMargin
-        var newY = bottomRightPoint.y + deltaY
-        if (newY > maxY - defaultMargin) newY = maxY - defaultMargin
-        if (newY < minY + defaultMargin) newY = minY + defaultMargin
+    /**
+     * 右下点
+     * @param touchX Int
+     * @param touchY Int
+     */
+    private fun adjustBottomRight(touchX: Int, touchY: Int) {
+        //左边界
+        if (touchX < bottomCenterPoint.x + dotsRadius * 2) {
+            return
+        }
+        //上边界
+        if (touchY < topRightPoint.y + dotsRadius * 2) {
+            return
+        }
+        //右边界
+        val newX = touchX.coerceAtMost(maxX - defaultMargin)
+        //下边界
+        val newY = touchY.coerceAtMost(maxY - defaultMargin)
         bottomRightPoint.set(newX, newY)
-        //底部中间点
-        val bottomCenterX = (bottomLeftPoint.x + bottomRightPoint.x) / 2
-        val bottomCenterY = (bottomLeftPoint.y + bottomRightPoint.y) / 2
-        bottomCenterPoint.set(bottomCenterX, bottomCenterY)
+        updateCenterPoint(bottomCenterPoint.x, bottomLeftPoint, bottomRightPoint, bottomCenterPoint)
     }
 }
